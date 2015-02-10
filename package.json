@@ -1,0 +1,31 @@
+{
+  "name": "nodejs-dpd-modern-chat",
+  "version": "0.1.0",
+  "description": "Using Deployd module with dpd-express module for node.js and using this tutorial: http://css-tricks.com/replicating-google-hangouts-chat/ I will create responsive chat that looks like google's one",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ipepe/nodejs-dpd-modern-chat.git"
+  },
+  "keywords": [
+    "deployd",
+    "dpd",
+    "chat",
+    "dpd-express"
+  ],
+  "author": "Patryk Ptasiński",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ipepe/nodejs-dpd-modern-chat/issues"
+  },
+  "homepage": "https://github.com/ipepe/nodejs-dpd-modern-chat",
+  "dependencies": {
+    "deployd": "git://github.com/deployd/deployd#master",
+    "dpd-express": "0.0.1",
+    "ejs": "^2.2.4"
+  }
+}
