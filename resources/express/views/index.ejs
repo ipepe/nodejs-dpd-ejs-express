@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <%- include head.ejs %>
-
 <body>
-	<%= user.username + ' ' + user.id %>
-	<% if(!user){%>
-		<%- include login.ejs %>
-	<% } %>
-	<%- include register.ejs %>
+	<% if(!me){ %>
+	<%- include login.ejs %>
+	<% }else{ %>
 	<%- include loggedin.ejs %>
+	<% } %>
 </body>
 </html>

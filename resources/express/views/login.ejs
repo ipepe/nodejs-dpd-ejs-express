@@ -6,21 +6,20 @@
 		<label for="password">Password:</label>
 		<input type="password" id="password" /><br />
 		<button type="submit" class="btn btn-primary">Login</button>
-		<a href="/register.html" class="btn btn-link">sign up</a>
+		<a href="/register" class="btn btn-link">sign up</a>
 	</form>
 </div>
-<script type="text/javascript" src="/dpd.js"></script>
 <script type="text/javascript">
 	function postForm() {
 		var username = document.getElementById('username').value;
 		var password = document.getElementById('password').value;
 		dpd.users.login( {username: username, password: password}, function(session, error) {
 			if (error) {
-				alert(error.message);
+				sweetAlert("Oops...", error.message, "error");
 			} else {
-				//location.href = "/welcome.html";
+				location.href = "/index";
 			}
 		});
 		return false;
-	});
+	}
 </script>

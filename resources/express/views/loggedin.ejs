@@ -1,1 +1,15 @@
-<!-- asfdsf -->
+<div class="container">
+	<h1>Welcome, <%= me.username %>!</h1>
+	<button class="btn" id="logout-btn" onclick="logout()">Logout</button>
+</div>
+<script type="text/javascript">
+function logout() {
+	dpd.users.logout(function(res, err) {
+		if(err){
+			sweetAlert("Oops...", error.message, "error");
+		}else{
+			location.href = "/";
+		}
+	});
+}
+</script>

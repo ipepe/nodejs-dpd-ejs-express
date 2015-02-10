@@ -1,1 +1,44 @@
-<!-- asadaskdjas -->
+<!DOCTYPE html>
+<html lang="en">
+<%- include head.ejs %>
+<body>
+	<div class="container">
+		<h1>Register</h1>
+		<form onsubmit="return postForm()">
+			<label for="username">Username:</label>
+			<input type="text" id="username" />
+			<label for="password">Password:</label>
+			<input type="password" id="password" />
+			<label for="confirm-password">Confirm Password:</label>
+			<input type="password" id="confirm-password" /><br />
+			<button type="submit" class="btn btn-primary">Sign up</button>
+			<a href="/index" class="btn btn-link">home</a>
+		</form>
+	</div>
+	<script type="text/javascript">
+	function postForm() {
+		var username = document.getElementById('username').value;
+		var password = document.getElementById('password').value;
+		var confirmPassword = document.getElementById('confirm-password').value;
+		if (!username) {
+			sweetAlert("Oops...", "Username is required.", "error");
+		} else if (!password) {
+			sweetAlert("Oops...", "Password is required.", "error");
+		} else if (password !== confirmPassword) {
+			sweetAlert("Oops...", "Passwords do not match.", "error");
+		} else if ( password.length < 5 ){
+			sweetAlert("Oops...", "Password is too short.", "error");
+		}else {
+			dpd.users.post({username: username, password: password}, function(user, error) {
+				if (error) {
+					sweetAlert("Oops...", error.message, "error");
+				} else {
+					location.href = "/index";
+				}
+			});
+		}
+		return false;
+	}
+	</script>
+</body>
+</html>
