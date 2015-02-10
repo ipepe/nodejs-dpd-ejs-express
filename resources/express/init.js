@@ -1,3 +1,4 @@
 app.get('/', function(req, res) {
-    res.render('index.ejs', {number: 1})
+	//console.log(req.me);
+    res.render('index.ejs', {res: res, req: req, user: req.me? req.me : false })
 });

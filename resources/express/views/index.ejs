@@ -1,8 +1,14 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include head.ejs %>
+
 <body>
-<div>
-This is express folder views
-<%= 2+2 %>
-</div>
+	<%= user.username + ' ' + user.id %>
+	<% if(!user){%>
+		<%- include login.ejs %>
+	<% } %>
+	<%- include register.ejs %>
+	<%- include loggedin.ejs %>
 </body>
 </html>
